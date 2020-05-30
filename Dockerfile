@@ -21,6 +21,8 @@ RUN mkdir -p /tmp/dependencies  \
 # Set global PATH such that "jmeter" command is found
 ENV PATH $PATH:$JMETER_BIN
 
+VOLUME ["/data"]
+
 WORKDIR	$JMETER_HOME
 
 EXPOSE 1099 60001
