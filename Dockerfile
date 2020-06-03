@@ -7,6 +7,9 @@ ARG JMETER_VERSION="5.1.1"
 ENV JMETER_HOME /opt/apache-jmeter-$JMETER_VERSION
 ENV JMETER_DOWNLOAD_URL  https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$JMETER_VERSION.tgz
 ENV SSL_DISABLED true
+ENV TZ Asia/Shanghai
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get update && apt-get -y install curl
 
@@ -21,11 +24,6 @@ RUN mkdir -p /tmp/dependencies  \
 
 # Set global PATH such that "jmeter" command is found
 ENV PATH $PATH:$JMETER_HOME/bin
-
-# 更改时区为上海
-ENV TZ Asia/Shanghai
-
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 VOLUME ["/data"]
 
