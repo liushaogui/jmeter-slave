@@ -1,4 +1,4 @@
-FROM runcare/debian-jre1.8:latest
+FROM openjdk:8u252-jre-slim
 
 #更新版本1
 MAINTAINER runcare<larrygui@foxmail.com>
