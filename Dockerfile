@@ -1,4 +1,4 @@
-FROM openjdk:8u252-jre-slim
+FROM runcare/debian-jre1.8
 
 # 更新版本1
 MAINTAINER runcare<larrygui@foxmail.com>
@@ -7,11 +7,6 @@ ARG JMETER_VERSION="5.1.1"
 ENV JMETER_HOME /opt/apache-jmeter-$JMETER_VERSION
 ENV JMETER_DOWNLOAD_URL  https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$JMETER_VERSION.tgz
 ENV SSL_DISABLED true
-ENV TZ Asia/Shanghai
-
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
-RUN apt-get update && apt-get -y install curl
 
 RUN mkdir -p /tmp/dependencies  \
 	&& curl -L --silent $JMETER_DOWNLOAD_URL >  /tmp/dependencies/apache-jmeter-$JMETER_VERSION.tgz  \
