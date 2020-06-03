@@ -9,6 +9,8 @@ ENV	JMETER_BIN	$JMETER_HOME/bin
 ENV	JMETER_DOWNLOAD_URL  https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$JMETER_VERSION.tgz
 ENV SSL_DISABLED true
 
+RUN apt-get update && apt-get -y install curl
+
 RUN mkdir -p /tmp/dependencies  \
 	&& curl -L --silent $JMETER_DOWNLOAD_URL >  /tmp/dependencies/apache-jmeter-$JMETER_VERSION.tgz  \
 	&& mkdir -p /opt  \
