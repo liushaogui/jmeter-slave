@@ -1,4 +1,8 @@
-FROM runcare/debian-jre1.8
+#oracle jdk 1.8 备用
+#FROM runcare/debian-jre1.8
+
+# openjdk 1.8
+FROM runcare/openjdk-jre1.8
 
 # 更新版本1
 MAINTAINER runcare<larrygui@foxmail.com>
