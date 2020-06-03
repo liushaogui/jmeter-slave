@@ -21,6 +21,11 @@ RUN mkdir -p /tmp/dependencies  \
 # Set global PATH such that "jmeter" command is found
 ENV PATH $PATH:$JMETER_BIN
 
+# 更改时区为上海
+ENV TZ Asia/Shanghai
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 VOLUME ["/data"]
 
 WORKDIR	$JMETER_HOME
