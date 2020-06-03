@@ -1,6 +1,6 @@
 FROM openjdk:8u252-jre-slim
 
-#更新版本1
+# 更新版本1
 MAINTAINER runcare<larrygui@foxmail.com>
 
 ARG JMETER_VERSION="5.1.1"
