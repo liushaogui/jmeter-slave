@@ -1,4 +1,4 @@
-#oracle jdk 1.8 备用
+# oracle jdk 1.8 备用
 #FROM runcare/debian-jre1.8
 
 # openjdk 1.8
