@@ -26,7 +26,7 @@ WORKDIR	$JMETER_HOME
 RUN sed 's/#beanshell.server.port=9000/beanshell.server.port=9000/g' ./bin/jmeter.properties > ./bin/jmeter_temp.properties
 RUN mv ./bin/jmeter_temp.properties ./bin/jmeter.properties
 
-COPY update_qps.bsh $JMETER_HOME
+COPY update_parameter.bsh $JMETER_HOME
 
 # Set global PATH such that "jmeter" command is found
 ENV PATH $PATH:$JMETER_HOME/bin
