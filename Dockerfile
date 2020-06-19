@@ -7,7 +7,7 @@ FROM runcare/openjdk-jre1.8
 # 更新版本1
 MAINTAINER runcare<larrygui@foxmail.com>
 
-ARG JMETER_VERSION="5.1.1"
+ARG JMETER_VERSION="5.2.1"
 ENV JMETER_HOME /opt/apache-jmeter-$JMETER_VERSION
 ENV JMETER_DOWNLOAD_URL  https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$JMETER_VERSION.tgz
 ENV SSL_DISABLED true
@@ -18,8 +18,9 @@ RUN mkdir -p /tmp/dependencies  \
 	&& tar -xzf /tmp/dependencies/apache-jmeter-$JMETER_VERSION.tgz -C /opt  \
 	&& rm -rf /tmp/dependencies
 
-# TODO: plugins (later)
+# plugins
 # && unzip -oq "/tmp/dependencies/JMeterPlugins-*.zip" -d $JMETER_HOME
+Copy jmeter-plugins-casutg-2.9.jar $JMETER_HOME/lib/ext
 
 WORKDIR	$JMETER_HOME
 
