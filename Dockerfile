@@ -20,7 +20,7 @@ RUN mkdir -p /tmp/dependencies  \
 
 # plugins
 # && unzip -oq "/tmp/dependencies/JMeterPlugins-*.zip" -d $JMETER_HOME
-Copy jmeter-plugins-casutg-2.9.jar $JMETER_HOME/lib/ext
+COPY jmeter-plugins-casutg-2.9.jar $JMETER_HOME/lib/ext
 
 WORKDIR	$JMETER_HOME
 
