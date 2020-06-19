@@ -9,4 +9,4 @@ print("Setting property '"+p+"' to '"+v+"'.");
 JMeterUtils.getJMeterProperties().setProperty(p, v);
 }
 
-setprop("qps", args[0]);
+setprop(args[0], args[1]);
